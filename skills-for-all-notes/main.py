@@ -209,7 +209,7 @@
 #     else:
 #         print("leap")
 
-#A program that reads a sequence of numbers and counts how many numbers are even or odds
+# A program that reads a sequence of numbers and counts how many numbers are even or odds
 # odd_numbers = 0
 # even_numbers = 0
 #
@@ -309,7 +309,7 @@
 # print("You've successfully left the loop!")
 
 
-#THE UGLY VOWEL EATER
+# THE UGLY VOWEL EATER
 # user_word = input("Enter a word: ")
 # user_word = user_word.upper()
 #
@@ -328,7 +328,7 @@
 #         print(letter)
 
 
-#THE PRETTY VOWEL EATER
+# THE PRETTY VOWEL EATER
 # word_without_vowels = ""
 #
 # user_word = input("Enter your word: ")
@@ -423,7 +423,7 @@
 # var_left = var << 2 #multiplies var by 2 * 2 = >>
 # print(var, var_left, var_right)
 
-#LISTS
+# LISTS
 
 # numbers = [10, 5, 7, 2, 1]
 # print("Original list content:", numbers)  # Printing original list content.
@@ -695,4 +695,108 @@
 # print(t)
 # print(s)
 
+############################
 
+def address(street, city, postal_code):
+    print("Your address is:", street, "St.,", city, postal_code)
+
+
+s = input("Street: ")
+p_c = input("Postal Code: ")
+c = input("City: ")
+address(s, c, p_c)
+
+
+##############################
+
+# Ex. 1
+def subtra(a, b):
+    print(a - b)
+
+
+subtra(5, 2)  # outputs: 3
+subtra(2, 5)  # outputs: -3
+
+
+# Ex. 2
+def subtra(a, b):
+    print(a - b)
+
+
+subtra(a=5, b=2)  # outputs: 3
+subtra(b=2, a=5)  # outputs: 3
+
+
+# Ex. 3
+def subtra(a, b):
+    print(a - b)
+
+
+subtra(5, b=2)  # outputs: 3
+subtra(5, 2)  # outputs: 3
+
+
+########################
+# Check if year is leap
+
+
+def is_year_leap(year):
+    if year % 4 != 0:
+        return False
+    elif year % 100 != 0:
+        return True
+    elif year % 400 != 0:
+        return False
+    else:
+        return True
+
+
+test_data = [1900, 2000, 2016, 1987]
+test_results = [False, True, True, False]
+for i in range(len(test_data)):
+    yr = test_data[i]
+    print(yr, "-> ", end="")
+    result = is_year_leap(yr)
+    if result == test_results[i]:
+        print("OK")
+    else:
+        print("Failed")
+
+
+############################
+
+def is_year_leap(year):
+    if year % 4 != 0:
+        return False
+    elif year % 100 != 0:
+        return True
+    elif year % 400 != 0:
+        return False
+    else:
+        return True
+
+
+def days_in_month(year, month):
+    if year < 1582 or month < 1 or month > 12:
+        return None
+    days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    res = days[month - 1]
+    if month == 2 and is_year_leap(year):
+        res = 29
+    return res
+
+
+test_years = [1900, 2000, 2016, 1987]
+test_months = [2, 2, 1, 11]
+test_results = [28, 29, 31, 30]
+for i in range(len(test_years)):
+    yr = test_years[i]
+    mo = test_months[i]
+    print(yr, mo, "-> ", end="")
+    result = days_in_month(yr, mo)
+    if result == test_results[i]:
+        print("OK")
+    else:
+        print("Failed")
+
+############################
