@@ -684,12 +684,15 @@
 # for v in range(len(my_list)):
 #     my_list.insert(1, my_list[v])
 # print(my_list)
-t = [[3 - i for i in range(3)] for j in range(3)]
-s = 0
-for i in range(3):
-    s += t[i][i]
 
-    print(s)
-print(t)
-print(s)
+
+# t = [[3 - i for i in range(3)] for j in range(3)]
+# s = 0
+# for i in range(3):
+#     s += t[i][i]
+#
+#     print(s)
+# print(t)
+# print(s)
+
 
