@@ -802,3 +802,60 @@ for i in range(len(test_years)):
 ############################
 
 print("just testing this one")
+
+############################
+
+
+def bmi(weight, height):
+    return weight / height ** 2
+
+
+print(bmi(52.5, 1.65))
+
+# backslash (\) symbol is used. If you use it in Python code and end a line with it,
+#  it will tell Python to continue the line of code in the next line of code.
+
+def bmi(weight, height):
+    if height < 1.0 or height > 2.5 or \
+    weight < 20 or weight > 200:
+        return None
+
+    return weight / height ** 2
+
+
+print(bmi(352.5, 1.65))
+
+####################################
+
+def ft_and_inch_to_m(ft, inch = 0.0):
+    return ft * 0.3048 + inch * 0.0254
+ 
+ 
+def lb_to_kg(lb):
+    return lb * 0.4535923
+ 
+ 
+def bmi(weight, height):
+    if height < 1.0 or height > 2.5 or weight < 20 or weight > 200:
+        return None
+ 
+    return weight / height ** 2
+ 
+ 
+print(bmi(weight = lb_to_kg(176), height = ft_and_inch_to_m(5, 7)))
+
+####################################################################
+
+def is_a_triangle(a, b, c):
+    if a + b <= c:
+        return False
+    if b + c <= a:
+        return False
+    if c + a <= b:
+        return False
+    return True
+
+
+print(is_a_triangle(1, 1, 1))
+print(is_a_triangle(1, 1, 3))
+
