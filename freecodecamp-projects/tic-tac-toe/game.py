@@ -22,13 +22,18 @@ class TicTacToe:
             print('| ' + ' | '.join(row) + ' |')
 
     def available_moves(self):
+      
         return [i for i, spot in enumerate(self.board) if spot == ' ']
+        
         # moves = []
         # for(i, x) in enumerate(self.board):
         #     # ['z', 'x', 'a'] ==> [(0, 'z'), (1, 'x')]
         #     if spot == ' ':
         #         moves.append(i)
         # return moves
+
+    def printAvailable_moves(self):
+        print([i for i, spot in enumerate(self.board) if spot == ' '])
 
     def empty_squares(self):
         return ' ' in self.board
@@ -91,6 +96,7 @@ def play(game, x_player, o_player, print_game=True):
             if print_game:
                 print(letter + f' makes a move to square {square}')
                 game.print_board()
+                #game.printAvailable_moves()
                 print('')
 
             if game.current_winner:   
