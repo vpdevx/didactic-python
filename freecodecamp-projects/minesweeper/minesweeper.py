@@ -9,8 +9,10 @@ class Board:
         # creating the board
         # helper function
         self.board = self.make_new_board()
+        
 
         # iniitizalize a set to keep track of which locations we've uncovered
+        self.assign_values_to_board()
         # we'll save(row,col) tuples into this set
         self.dug = set()  # if we dig at 0, 0, then self.dug = ({0,0})
 
@@ -68,8 +70,8 @@ class Board:
         # make sure to not go out of bounds
 
         num_neighboring_bombs = 0
-        for r in range(max(0, row - 1), min(self.dim_size-1(row + 1)) + 1):
-            for c in range(max(0, col - 1), min(self.dim_size-1, (col + 1)) + 1):
+        for r in range(max(0, row-1), min(self.dim_size-1,row + 1) + 1):
+            for c in range(max(0, col - 1), min(self.dim_size-1, col + 1) + 1):
                 if r == row and c == col:
                     # our location, dont check
                     continue
@@ -94,8 +96,8 @@ class Board:
             return True
 
         # self.board[row][col] == 0
-        for r in range(max(0, row - 1), min(self.dim_size-1(row + 1)) + 1):
-            for c in range(max(0, col - 1), min(self.dim_size-1, (col + 1)) + 1):
+        for r in range(max(0, row - 1), min(self.dim_size-1,row + 1) + 1):
+            for c in range(max(0, col - 1), min(self.dim_size-1, col + 1) + 1):
                 if (r, c) in self.dug:
                     continue  # dont dig where you have alreay gdug
                 self.dig(r, c)
@@ -179,7 +181,7 @@ def play(dim_size=10, num_bombs=10):
         print("sorry game over")
         board.dug = [(r,c) for r in range(board.dim_size) for c in range(board.dim_size)] 
         print(board)
-
+        print("sorry game over")
 
 if __name__ == '__main__': #good pratice
     play()
